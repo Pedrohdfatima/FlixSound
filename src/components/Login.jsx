@@ -6,7 +6,7 @@ const Login = () => {
         const isProduction = process.env.NODE_ENV === 'production';
         const redirectUri = isProduction
             ? 'https://pedrohdfatima.github.io/FlixSound/' // Sua URL do GitHub Pages
-                : 'http://localhost:5173'; // Sua URL local
+                : 'http://localhost:5174'; // Sua URL local
 
         const generateRandomString = (length) => {
             let text = ''
