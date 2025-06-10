@@ -1,12 +1,13 @@
 import React from "react";
 
 const Login = () => {
+   console.log('Componente de Login foi renderizado!');
     const handleLogin = async () => {
         const clientId = 'f3b61241871444a2849aec12cd8a02ab'
         const isProduction = process.env.NODE_ENV === 'production';
         const redirectUri = isProduction
             ? 'https://pedrohdfatima.github.io/FlixSound/' // Sua URL do GitHub Pages
-                : 'http://localhost:5174'; // Sua URL local
+                : 'http://127.0.0.1:5173'; // Sua URL local
 
         const generateRandomString = (length) => {
             let text = ''
@@ -30,7 +31,7 @@ const Login = () => {
 
     localStorage.setItem('code_verifier', codeVerifier);
 
-    const scope = 'suer-read-private user-read-email streaming user-read-playback-state user-modify-playback-state';
+    const scope = 'user-read-private user-read-email streaming user-read-playback-state user-modify-playback-state';
     const authUrl = new URL("https://accounts.spotify.com/authorize");
 
     const params = {
